@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ApplicationController {
 
-    @Autowired
-    private HotelRepository hotelRepository;
+	@Autowired
+	private HotelRepository hotelRepository;
 
-    @RequestMapping("/")
-    @ResponseBody
-    public String helloWorld() {
-        return "Hello hotel: " + hotelRepository.findOne(1l).getName();
-    }
+	@RequestMapping("/")
+	@ResponseBody
+	public String helloWorld() {
+		return "Hello hotel: " + hotelRepository.findOne(1l).getName();
+	}
 }

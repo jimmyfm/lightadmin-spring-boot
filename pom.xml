@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.1.RELEASE</version>
+		<version>1.1.5.RELEASE</version>
 	</parent>
 
 	<groupId>org.lightadmin</groupId>
@@ -13,7 +13,7 @@
 
 	<packaging>jar</packaging>
 	<name>LightAdmin Boot</name>
-	<version>1.0.0.M3-SNAPSHOT</version>
+	<version>1.0.0.BUILD-SNAPSHOT</version>
 	<description>Spring Boot Integration Sample</description>
 
 	<properties>
@@ -28,17 +28,6 @@
 			<groupId>org.lightadmin</groupId>
 			<artifactId>lightadmin</artifactId>
 			<version>1.0.0.M3-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>tiles-velocity</artifactId>
-					<groupId>org.apache.tiles</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>tiles-freemarker</artifactId>
-					<groupId>org.apache.tiles</groupId>
-				</exclusion>
-			</exclusions>
-			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,25 +36,25 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-jetty</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!--<dependency> -->
-		<!--<groupId>org.springframework.boot</groupId> -->
-		<!--<artifactId>spring-boot-starter-jetty</artifactId> -->
-		<!--</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -77,6 +66,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>lightadmin-boot</finalName>
 		<plugins>
@@ -86,4 +76,24 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>lightadmin-nexus-releases</id>
+			<url>http://lightadmin.org/nexus/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+		</repository>
+		<repository>
+			<id>lightadmin-nexus-snapshots</id>
+			<url>http://lightadmin.org/nexus/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
 </project>

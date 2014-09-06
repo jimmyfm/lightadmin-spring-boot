@@ -1,0 +1,17 @@
+{
+  "name": "LightAdmin embedded Spring Boot",
+  "description": "LightAdmin is a java CRUD with auto scaffolding: quick and easy",
+  "keywords": ["java", "spring", "jpa", "boot"],
+  "webiste": "https://github.com/jimmyfm/lightadmin-springboot-heroku",
+  "repository": "https://github.com/jimmyfm/lightadmin-springboot-heroku.git",
+  "logo": "https://avatars1.githubusercontent.com/u/471620",
+  "success_url": "/admin/dashboard",
+  "scripts": {},
+  "env": {
+   "TEST_PARAM": {
+            "description": "Test parameter value",
+            "value": ""
+    }
+    },
+  "addons": []  
+}
